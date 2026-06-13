@@ -1,0 +1,36 @@
+bandit0:ssh -p 2220 bandit0@bandit.labs.overthewire.org
+bandit0:
+to solve this level we need to ls and find readme file.
+bandit1:
+to solve this level we treat - file diffrently. we can use "cat < -" to view the file.
+bandit2:
+to solve this level we need to use tab or "" in the cat cmd to auto complete or "" it .
+bandit3:
+to solve this level we need too use ls -a.
+bandit4:
+to solve this level we need to check file one by one and look for human readable file.
+bandit5:
+this is the most difficult level i do not yet understand fully. to solve it i used find /inhere -type f -size 1033c ! -executable.
+turns out that the level is still not solved. the new command is : find path -size 1033c -readable ! -executable.
+bandit6:
+this level was i think easier than level 5 as i had already used find cmd.
+the command to solve is : find / -user bandit7 -group bandit6 -size 33c 2>/dev/null.
+2</dev/null. is great adition. 2< means error and /dev/null means discard this . so together the become discard errors.
+bandit7:
+this level was very easy all i had to do was use grep then boom password appeared.
+cmd used here is : grep "millionth" data.txt
+bandit8:
+this level was not difficult i just need to scroll down and read the documentation properly for man uniq.
+command used : cat "data.txt" |sort |uniq -u.
+bandit9:
+this level is interesting because it seems like find and grep can solve this but then you remember find sees readable for files not strings.
+to solve this i initaily used grep -a -e "=" data.txt but the effeciant option is strings data.txt | grep "==="
+bandit10:
+this level was the easiest so far. i just read that base64 is a encoding then i did man base64 . i got to know to decode the base64.
+i just had to do "base64 -d data.txt"
+bandit11:
+this level was a bit diffrent and i tool help from chatgpt to solve it easily as thought that maybe i will need to do some coding or scripting.
+but as it turns out i just need to use tr or translate. i did tr 'A-Za-Z' 'N-ZA-Mn-za-m' < data.txt
+
+
+
