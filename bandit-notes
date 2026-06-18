@@ -31,6 +31,10 @@ i just had to do "base64 -d data.txt"
 bandit11:
 this level was a bit diffrent and i tool help from chatgpt to solve it easily as thought that maybe i will need to do some coding or scripting.
 but as it turns out i just need to use tr or translate. i did tr 'A-Za-Z' 'N-ZA-Mn-za-m' < data.txt
-
+bandit12:
+this level was not complex but weird in a sense as i have never done this decompress. in this we create a dictionary in /tmp as we are allowed to create something in 
+/tmp only in bandit. we use tempdir=$(mktemp -d). then we do copy our data.txt in $tempdir. then we cd to the tempdir. then we use,  file [filename.extension],
+to find the extension. then we use the corresponding decompression method after renaming the file with correct extension. decompression for gzip or .gz file,
+gunzip filename. decompression for bzip2 or bz2 file is bunzip2 filename. for tar or .tar we use tar -xf filename.
 
 
